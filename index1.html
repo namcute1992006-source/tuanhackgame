@@ -1,325 +1,190 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang Chia Sẻ Ứng Dụng</title>
-    <link rel="stylesheet" href="https://cloudflare.com">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- ==================== PHẦN 1: TÊN WEB & TỪ KHÓA TÌM TRÊN GOOGLE ==================== -->
+  <!-- 👉 GHI TÊN TRANG WEB CỦA BẠN VÀO ĐÂY -->
+  <title>hackgamevip.net</title>
 
-        body {
-            background: radial-gradient(circle at top, #201c35 0%, #0b0b0f 100%);
-            color: #ffffff;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-        }
+  <!-- 👉 GHI MÔ TẢ NGẮN VỀ TRANG WEB VÀO CHỖ content="..." -->
+  <meta name="description" content="HACK LIÊN QUÂN PUBG ZING SEEPD FC MOBIOE ">
 
-        .top-bar {
-            width: 100%;
-            max-width: 450px;
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 25px;
-        }
+  <!-- 👉 GHI CÁC TỪ KHÓA TÌM TRÊN GOOGLE VÀO CHỖ content="..." -->
+  <meta name="keywords" content="GHI_TỪ_KHÓA_1, GHI_TỪ_KHÓA_2, GHI_TỪ_KHÓA_3">
+  <meta name="robots" content="index, follow">
 
-        .icon-btn {
-            width: 42px;
-            height: 42px;
-            border-radius: 12px;
-            background: rgba(255, 255, 255, 0.06);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            color: #7b8cff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-            backdrop-filter: blur(10px);
-        }
+  <!-- 👉 DÁN ĐOẠN MÃ <meta name="google-site-verification"...> CỦA GOOGLE VÀO DÒNG DƯỚI ĐÂY -->
+  
 
-        .profile-section {
-            text-align: center;
-            margin-bottom: 25px;
-        }
-
-        .avatar {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid #6c5ce7;
-            box-shadow: 0 0 28px rgba(108, 92, 231, 0.7);
-            margin-bottom: 18px;
-            background: #1a1a24;
-        }
-
-        .subtitle {
-            font-size: 14px;
-            color: #b2bec3;
-            margin-bottom: 6px;
-        }
-
-        .brand-name {
-            font-size: 24px;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
-            margin-bottom: 8px;
-        }
-
-        .verified-badge {
-            color: #74b9ff;
-            font-size: 18px;
-        }
-
-        .role-text {
-            font-size: 15px;
-        }
-
-        .gradient-text {
-            background: linear-gradient(90deg, #a29bfe, #fd79a8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-weight: bold;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 30px;
-        }
-
-        .social-btn {
-            width: 48px;
-            height: 48px;
-            border-radius: 14px;
-            background: rgba(255, 255, 255, 0.07);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            text-decoration: none;
-            backdrop-filter: blur(10px);
-        }
-
-        .telegram { color: #38bdf8; }
-        .youtube { color: #f87171; }
-
-        .card {
-            width: 100%;
-            max-width: 450px;
-            background: rgba(255, 255, 255, 0.06);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            border-radius: 22px;
-            padding: 15px;
-            backdrop-filter: blur(12px);
-            margin-bottom: 22px;
-        }
-
-        .card-banner {
-            position: relative;
-            width: 100%;
-            height: 175px;
-            border-radius: 15px;
-            overflow: hidden;
-            margin-bottom: 14px;
-            background: #1a1a24;
-        }
-
-        .card-banner img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .os-tag {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 5px 10px;
-            border-radius: 8px;
-            font-size: 12px;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-        }
-
-        .card-footer {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 16px;
-        }
-
-        .app-icon {
-            width: 54px;
-            height: 54px;
-            min-width: 54px;
-            border-radius: 14px;
-            object-fit: cover;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            background: #2d3436;
-        }
-
-        .card-info h3 {
-            font-size: 16px;
-            font-weight: 700;
-            margin-bottom: 4px;
-            text-transform: uppercase;
-            line-height: 1.3;
-        }
-
-        .card-info p {
-            font-size: 13px;
-            color: #a4b0be;
-        }
-
-        .btn-group {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .action-btn {
-            width: 100%;
-            padding: 13px;
-            border-radius: 50px;
-            text-decoration: none;
-            color: #ffffff;
-            font-weight: 600;
-            font-size: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
-
-        .btn-download {
-            background: linear-gradient(90deg, #7c3aed 0%, #3b82f6 100%);
-            box-shadow: 0 4px 15px rgba(124, 58, 237, 0.4);
-        }
-
-        .btn-telegram {
-            background: linear-gradient(90deg, #0ea5e9 0%, #38bdf8 100%);
-            box-shadow: 0 4px 15px rgba(14, 165, 233, 0.4);
-        }
-    </style>
+  <link rel="stylesheet" href="https://cloudflare.com">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    body { min-height: 100vh; background: radial-gradient(circle at top, #1e1b4b, #090d16 70%); color: #ffffff; display: flex; justify-content: center; padding: 20px 16px; }
+    .container { width: 100%; max-width: 420px; display: flex; flex-direction: column; align-items: center; }
+    .top-bar { width: 100%; display: flex; justify-content: space-between; margin-bottom: 24px; }
+    .icon-btn { width: 40px; height: 40px; border-radius: 12px; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.12); color: #a5b4fc; display: flex; align-items: center; justify-content: center; cursor: pointer; backdrop-filter: blur(10px); font-size: 16px; }
+    .avatar-wrapper { width: 110px; height: 110px; border-radius: 50%; padding: 3px; background: linear-gradient(135deg, #38bdf8, #a855f7); box-shadow: 0 0 25px rgba(168, 85, 247, 0.5); margin-bottom: 20px; }
+    .avatar { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; background-color: #0f172a; display: block; }
+    .subtitle { font-size: 14px; color: #cbd5e1; margin-bottom: 8px; text-align: center; }
+    .name { font-size: 26px; font-weight: 700; display: flex; align-items: center; gap: 6px; margin-bottom: 6px; }
+    .verified { width: 18px; height: 18px; background: #38bdf8; color: #090d16; border-radius: 50%; font-size: 10px; display: inline-flex; align-items: center; justify-content: center; font-weight: bold; }
+    .bio { font-size: 14px; color: #94a3b8; margin-bottom: 22px; text-align: center; }
+    .bio span { background: linear-gradient(90deg, #38bdf8, #c084fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 600; }
+    .social-links { display: flex; gap: 14px; margin-bottom: 28px; }
+    .social-btn { width: 48px; height: 48px; border-radius: 14px; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.12); display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 20px; transition: transform 0.2s, background 0.2s; }
+    .social-btn.telegram { color: #38bdf8; }
+    .social-btn.youtube { color: #f87171; }
+    .social-btn:hover { transform: translateY(-2px); background: rgba(255, 255, 255, 0.15); }
+    .card { width: 100%; background: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 20px; padding: 14px; backdrop-filter: blur(12px); margin-bottom: 16px; text-decoration: none; color: inherit; display: block; transition: transform 0.2s; }
+    .card:hover { transform: translateY(-3px); }
+    .card-banner { width: 100%; height: 150px; border-radius: 14px; background: #1e293b; position: relative; overflow: hidden; margin-bottom: 14px; }
+    .card-banner img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .badge { position: absolute; top: 10px; right: 10px; background: rgba(15, 23, 42, 0.75); border: 1px solid rgba(255, 255, 255, 0.2); padding: 4px 10px; border-radius: 8px; font-size: 12px; font-weight: 600; display: flex; align-items: center; gap: 5px; }
+    .card-footer { display: flex; align-items: center; gap: 12px; }
+    .app-icon { width: 48px; height: 48px; border-radius: 12px; background: #334155; flex-shrink: 0; overflow: hidden; }
+    .app-icon img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .card-info h3 { font-size: 15px; font-weight: 700; margin-bottom: 4px; text-transform: uppercase; }
+    .card-info p { font-size: 12px; color: #94a3b8; }
+  </style>
 </head>
 <body>
 
+  <div class="container">
     <div class="top-bar">
-        <div class="icon-btn"><i class="fa-regular fa-bell"></i></div>
-        <div class="icon-btn"><i class="fa-regular fa-moon"></i></div>
+      <button class="icon-btn" title="Thông báo"><i class="fa-regular fa-bell"></i></button>
+      <button class="icon-btn" title="Giao diện"><i class="fa-regular fa-moon"></i></button>
     </div>
 
-    <!-- PHẦN THÔNG TIN CÁ NHÂN -->
-    <div class="profile-section">
-        <img src="DÁN_LINK_AVATAR_TRÒN" alt="Avatar" class="avatar">
-        <p class="subtitle">Website chia sẻ tài nguyên & ứng dụng</p>
-        <div class="brand-name">
-            TÊN CỦA BẠN <i class="fa-solid fa-circle-check verified-badge"></i>
-        </div>
-        <p class="role-text">and I'm a <span class="gradient-text">Creator and Developer</span></p>
+    <!-- ==================== PHẦN 2: THÔNG TIN CÁ NHÂN ==================== -->
+    <div class="avatar-wrapper">
+      <!-- 👉 DÁN LINK ẢNH AVATAR TRÒN VÀO CHỖ src="..." -->
+      <img src="https://i.postimg.cc/yY8g5QBg/IMG-3152.jpg" class="avatar" alt="Avatar">
     </div>
 
+    <!-- 👉 GHI DÒNG CHỮ NHỎ PHÍA TRÊN TÊN -->
+    <p class="subtitle">DỊT MẸ ANH EM</p>
+
+    <!-- 👉 GHI TÊN CHÍNH CỦA BẠN -->
+    <h1 class="name">VĂN TUẤN <span class="verified"><i class="fa-solid fa-check"></i></span></h1>
+
+    <!-- 👉 GHI BIỆT DANH HOẶC NGHỀ NGHIỆP -->
+    <p class="bio">and I'm a <span>TUẤN NÁT</span></p>
+
+    <!-- 👉 DÁN LINK TELEGRAM VÀ YOUTUBE VÀO CHỖ href="..." -->
     <div class="social-links">
-        <a href="DÁN_LINK_TELEGRAM_CÁ_NHÂN" class="social-btn telegram"><i class="fa-brands fa-telegram"></i></a>
-        <a href="DÁN_LINK_YOUTUBE_CÁ_NHÂN" class="social-btn youtube"><i class="fa-brands fa-youtube"></i></a>
+      <a href="DÁN_LINK_TELEGRAM" class="social-btn telegram"><i class="fa-brands fa-telegram"></i></a>
+      <a href="DÁN_LINK_YOUTUBE" class="social-btn youtube"><i class="fa-brands fa-youtube"></i></a>
     </div>
 
-    <!-- ==================== THẺ ỨNG DỤNG 1 ==================== -->
-    <div class="card">
-        <div class="card-banner">
-            <img src="DÁN_LINK_ẢNH_BÌA_1" alt="Banner">
-            <div class="os-tag"><i class="fa-solid fa-mobile-screen"></i> ios</div>
-        </div>
-        <div class="card-footer">
-            <img src="DÁN_LINK_ICON_APP_1" alt="App Icon" class="app-icon">
-            <div class="card-info">
-                <h3>TÊN ỨNG DỤNG SỐ 1</h3>
-                <p>Cập Nhật Ngày 18-11</p>
-            </div>
-        </div>
-        <div class="btn-group">
-            <a href="DÁN_LINK_TẢI_FILE_1" download class="action-btn btn-download">
-                <i class="fa-solid fa-download"></i> Tải Xuống
-            </a>
-            <a href="DÁN_LINK_NHÓM_TELEGRAM" class="action-btn btn-telegram">
-                <i class="fa-regular fa-paper-plane"></i> Tham gia nhóm Telegram
-            </a>
-        </div>
-    </div>
+    <!-- ==================== PHẦN 3: DANH SÁCH 7 THẺ ==================== -->
 
-    <!-- ==================== THẺ ỨNG DỤNG 2 ==================== -->
-    <div class="card">
-        <div class="card-banner">
-            <img src="DÁN_LINK_ẢNH_BÌA_2" alt="Banner">
-            <div class="os-tag"><i class="fa-solid fa-mobile-screen"></i> ios</div>
+    <!-- ---------- THẺ SỐ 1 ---------- -->
+    <!-- 👉 DÁN LINK ĐÍCH THẺ 1 VÀO href="..." -->
+    <a href="DÁN_LINK_WEB_1" class="card">
+      <div class="card-banner">
+        <!-- 👉 DÁN LINK ẢNH BÌA THẺ 1 VÀO src="..." -->
+        <img src="DÁN_LINK_ẢNH_BÌA_1" alt="Banner 1">
+        <span class="badge"><i class="fa-brands fa-apple"></i> iOS</span>
+      </div>
+      <div class="card-footer">
+        <!-- 👉 DÁN LINK ICON THẺ 1 VÀO src="..." -->
+        <div class="app-icon"><img src="DÁN_LINK_ICON_1" alt="Icon 1"></div>
+        <div class="card-info">
+          <!-- 👉 GHI TIÊU ĐỀ THẺ 1 -->
+          <h3>GHI_TIÊU_ĐỀ_THẺ_1</h3>
+          <!-- 👉 GHI NGÀY CẬP NHẬT THẺ 1 -->
+          <p>GHI_NGÀY_CẬP_NHẬT_1</p>
         </div>
-        <div class="card-footer">
-            <img src="DÁN_LINK_ICON_APP_2" alt="App Icon" class="app-icon">
-            <div class="card-info">
-                <h3>TÊN ỨNG DỤNG SỐ 2</h3>
-                <p>Cập Nhật Ngày 18-11</p>
-            </div>
-        </div>
-        <div class="btn-group">
-            <a href="DÁN_LINK_TẢI_FILE_2" download class="action-btn btn-download">
-                <i class="fa-solid fa-download"></i> Tải Xuống
-            </a>
-            <a href="DÁN_LINK_NHÓM_TELEGRAM" class="action-btn btn-telegram">
-                <i class="fa-regular fa-paper-plane"></i> Tham gia nhóm Telegram
-            </a>
-        </div>
-    </div>
+      </div>
+    </a>
 
-    <!-- ==================== THẺ ỨNG DỤNG 3 ==================== -->
-    <div class="card">
-        <div class="card-banner">
-            <img src="DÁN_LINK_ẢNH_BÌA_3" alt="Banner">
-            <div class="os-tag"><i class="fa-solid fa-mobile-screen"></i> ios</div>
+    <!-- ---------- THẺ SỐ 2 ---------- -->
+    <!-- 👉 DÁN LINK ĐÍCH THẺ 2 VÀO href="..." -->
+    <a href="DÁN_LINK_WEB_2" class="card">
+      <div class="card-banner">
+        <!-- 👉 DÁN LINK ẢNH BÌA THẺ 2 VÀO src="..." -->
+        <img src="DÁN_LINK_ẢNH_BÌA_2" alt="Banner 2">
+        <span class="badge"><i class="fa-brands fa-android"></i> Android</span>
+      </div>
+      <div class="card-footer">
+        <!-- 👉 DÁN LINK ICON THẺ 2 VÀO src="..." -->
+        <div class="app-icon"><img src="DÁN_LINK_ICON_2" alt="Icon 2"></div>
+        <div class="card-info">
+          <!-- 👉 GHI TIÊU ĐỀ THẺ 2 -->
+          <h3>GHI_TIÊU_ĐỀ_THẺ_2</h3>
+          <!-- 👉 GHI NGÀY CẬP NHẬT THẺ 2 -->
+          <p>GHI_NGÀY_CẬP_NHẬT_2</p>
         </div>
-        <div class="card-footer">
-            <img src="DÁN_LINK_ICON_APP_3" alt="App Icon" class="app-icon">
-            <div class="card-info">
-                <h3>TÊN ỨNG DỤNG SỐ 3</h3>
-                <p>Cập Nhật Ngày 18-11</p>
-            </div>
-        </div>
-        <div class="btn-group">
-            <a href="DÁN_LINK_TẢI_FILE_3" download class="action-btn btn-download">
-                <i class="fa-solid fa-download"></i> Tải Xuống
-            </a>
-            <a href="DÁN_LINK_NHÓM_TELEGRAM" class="action-btn btn-telegram">
-                <i class="fa-regular fa-paper-plane"></i> Tham gia nhóm Telegram
-            </a>
-        </div>
-    </div>
+      </div>
+    </a>
 
-    <!-- ==================== THẺ ỨNG DỤNG 4 ==================== -->
-    <div class="card">
-        <div class="card-banner">
-            <img src="https://i.postimg.cc/HkKp63sj/IMG-3111.jpg" alt="Banner">
-            <div class="os-tag"><i class="fa-solid fa-mobile-screen"></i> ios</div>
+    <!-- ---------- THẺ SỐ 3 ---------- -->
+    <!-- 👉 DÁN LINK ĐÍCH THẺ 3 VÀO href="..." -->
+    <a href="DÁN_LINK_WEB_3" class="card">
+      <div class="card-banner">
+        <!-- 👉 DÁN LINK ẢNH BÌA THẺ 3 VÀO src="..." -->
+        <img src="DÁN_LINK_ẢNH_BÌA_3" alt="Banner 3">
+        <span class="badge"><i class="fa-brands fa-windows"></i> Windows</span>
+      </div>
+      <div class="card-footer">
+        <!-- 👉 DÁN LINK ICON THẺ 3 VÀO src="..." -->
+        <div class="app-icon"><img src="DÁN_LINK_ICON_3" alt="Icon 3"></div>
+        <div class="card-info">
+          <!-- 👉 GHI TIÊU ĐỀ THẺ 3 -->
+          <h3>GHI_TIÊU_ĐỀ_THẺ_3</h3>
+          <!-- 👉 GHI NGÀY CẬP NHẬT THẺ 3 -->
+          <p>GHI_NGÀY_CẬP_NHẬT_3</p>
         </div>
-        <div class="card-footer">
-            <img src="https://i.postimg.cc/q7pBWgHM/IMG-3127.png" alt="App Icon" class="app-icon">
-            <div class="card-info">
-        <div class="btn-group">
-            <a href="https://www.mediafire.com/file/u7hiptokjse19lz/AOV+CH%E1%BA%A4P+T%E1%BB%90+NOKEY+MENU+T%C3%8DM.ipa/file?zarsrc=1303&utm_source=zalo&utm_medium=zalo&utm_campaign=zalo" download class="action-btn btn-download">
-                <i class="fa-solid fa-download"></i> Tải Xuống
-            </a>
+      </div>
+    </a>
+
+    <!-- ---------- THẺ SỐ 4 ---------- -->
+    <!-- 👉 DÁN LINK ĐÍCH THẺ 4 VÀO href="..." -->
+    <a href="DÁN_LINK_WEB_4" class="card">
+      <div class="card-banner">
+        <!-- 👉 DÁN LINK ẢNH BÌA THẺ 4 VÀO src="..." -->
+        <img src="DÁN_LINK_ẢNH_BÌA_4" alt="Banner 4">
+        <span class="badge"><i class="fa-solid fa-globe"></i> Web Tool</span>
+      </div>
+      <div class="card-footer">
+        <!-- 👉 DÁN LINK ICON THẺ 4 VÀO src="..." -->
+        <div class="app-icon"><img src="DÁN_LINK_ICON_4" alt="Icon 4"></div>
+        <div class="card-info">
+          <!-- 👉 GHI TIÊU ĐỀ THẺ 4 -->
+          <h3>GHI_TIÊU_ĐỀ_THẺ_4</h3>
+          <!-- 👉 GHI NGÀY CẬP NHẬT THẺ 4 -->
+          <p>GHI_NGÀY_CẬP_NHẬT_4</p>
+        </div>
+      </div>
+    </a>
+
+    <!-- ---------- THẺ SỐ 5 ---------- -->
+    <!-- 👉 DÁN LINK ĐÍCH THẺ 5 VÀO href="..." -->
+    <a href="DÁN_LINK_WEB_5" class="card">
+      <div class="card-banner">
+        <!-- 👉 DÁN LINK ẢNH BÌA THẺ 5 VÀO src="..." -->
+        <img src="DÁN_LINK_ẢNH_BÌA_5" alt="Banner 5">
+        <span class="badge"><i class="fa-brands fa-apple"></i> iOS</span>
+      </div>
+      <div class="card-footer">
+        <!-- 👉 DÁN LINK ICON THẺ 5 VÀO src="..." -->
+        <div class="app-icon"><img src="DÁN_LINK_ICON_5" alt="Icon 5"></div>
+        <div class="card-info">
+          <!-- 👉 GHI TIÊU ĐỀ THẺ 5 -->
+          <h3>GHI_TIÊU_ĐỀ_THẺ_5</h3>
+          <!-- 👉 GHI NGÀY CẬP NHẬT THẺ 5 -->
+          <p>GHI_NGÀY_CẬP_NHẬT_5</p>
+        </div>
+      </div>
+    </a>
+
+    <!-- ---------- THẺ SỐ 6 ---------- -->
+    <!-- 👉 DÁN LINK ĐÍCH THẺ 6 VÀO href="..." -->
+    <a href="DÁN_LINK_WEB_6" class="card">
+      <div class="card-banner">
+        <!-- 👉 DÁN LINK ẢNH BÌA THẺ 6 VÀO src="..." -->
+        <img src="DÁN_LINK_ẢNH_BÌA_6" alt="Banner 6">
+        <span class="badge"><i class="fa-solid fa-box-open"></i> Tài Nguyên</span>
+      </div>
